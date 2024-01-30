@@ -1,9 +1,9 @@
 /* HEADER */
 .main-container {
   max-width: 80vw;
-  height: 100vh;
+  height: 80vh;
   margin-left: 320px;
-  margin-right: 56px;
+  margin-right: 16px;
 }
 
 .header__navigation {
@@ -13,7 +13,7 @@
   padding: 16px;
   margin: 10px;
   border-radius: 8px;
-  background-color: var(--spotify-color);
+  background-color: var(--bg-color);
 }
 
 .header__navigation .navigation {
@@ -34,7 +34,7 @@
   width: 32px;
   height: 32px;
   background: var(--bg-icon);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -51,7 +51,7 @@
   width: 364px;
   height: 48px;
   margin-left: 8px;
-  background-color: #242424;
+  background-color: var(--bg-sub);
   border-radius: 500px;
   border: 1px solid transparent;
 }
@@ -66,7 +66,7 @@
   background: transparent;
   border: none;
   padding: 0px 100px 0 12px;
-  color: #fff;
+  color: var(--text-base-light);
   text-overflow: ellipsis;
   outline: none;
   text-overflow: ellipsis;
@@ -94,7 +94,7 @@
 /* HOVER */
 
 .header__search:hover {
-  border: 1px solid #fff;
+  border: 1px solid var(--text-base-light);
 }
 
 .header__login .subscribe:hover {
@@ -115,7 +115,7 @@
   padding-top: 16px;
   margin: 10px;
   border-radius: 10px;
-  background-color: #121212;
+  background-color: var(--bg-color);
 }
 
 .playlist {
@@ -152,74 +152,91 @@
 /* FIM SCROLL */
 
 .offer__list-item {
-  /* CODIGO COM JS CALCULANDO OS CARDS POR COLUNA */
+  /* CODIGO COM JS CALCULA OS CARDS POR COLUNA */
   display: grid;  /* define o modelo de layout do elemento como uma grade */
   gap: 16px;
-  grid-gap: 32px;  /* não é usado mais */
   margin: 0 auto;
+  width: 90%;
+  overflow: hidden;
 }
 
 .cards {
   position: relative; 
   width: 220px;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
   border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.cards:hover{
+  z-index: 50;
+  width: 240px;
+  height: 240px;
+  transition: all 0.3s ease-in-out;
+
 }
 
 .cards span {
-  padding: 16px;
+  width: 100%;
+  padding: 16px 0 0 16px;
   position: absolute;
   color: var(--text-base-light);
   font-size: 24px;
   font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.cards:hover span{
+  font-size: 26px;
+  backdrop-filter: blur(0);
 }
 
 /* COLOR CARDS */
 .card1 {
-  background-color: rgb(0, 100, 80);
+  background: var(--card1);
 }
 .card2 {
-  background-color: rgb(132, 0, 231);
+  background: var(--card2);
 }
 .card3 {
-  background: rgb(30, 50, 100);
+  background: var(--card3);
 }
 .card4 {
-  background: rgb(140, 25, 50);
+  background: var(--card4);
 }
 .card5 {
-  background: rgb(232, 17, 91);
+  background: var(--card5);
 }
 .card6 {
-  background: rgb(83, 122, 161);
+  background: var(--card6);
 }
 .card7 {
-  background: rgb(142, 102, 172);
+  background: var(--card7);
 }
 .card8 {
-  background: rgb(20, 138, 8);
+  background: var(--card8);
 }
 .card9 {
-  background: rgb(30, 50, 100);
+  background: var(--card9);
 }
 .card10 {
-  background: rgb(233, 20, 41);
+  background: var(--card10);
 }
 .card11 {
-  background: rgb(80, 55, 80);
+  background: var(--card11);
 }
 .card12 {
-  background: rgb(216, 64, 0);
+  background: var(--card12);
 }
 .card13 {
-  background: rgb(186, 93, 7);
+  background: var(--card13);
 }
 .card14 {
-  background: rgb(0, 30, 80);
+  background: var(--card14);
 }
 .card15 {
-  background: rgb(60, 30, 80);
+  background: var(--card15);
 }
 /* FIM COLOR CARDS */
 
@@ -228,10 +245,16 @@
   right: 0;
   bottom: 0;
   height: auto;
-  width: 107px;
+  width: 170px;
   transform: rotate(25deg) translate(18%, -2%);
+  transition: all 0.3s ease-in-out;
 }
 
+.offer__list-item .cards:hover img {
+  transition: all 0.3s ease-in-out;
+  width: 200px;
+  transform: rotate(18deg) translate(8%, -2%);
+}
 /* CARD ARTISTA */
 
 .artist {
@@ -252,7 +275,7 @@
 }
 
 .artist-card {
-  background: #181818;
+  background: var(--bg-icon);
   border-radius: 8px;
   -ms-flex: 1;
   flex: 1;
@@ -264,7 +287,7 @@
 }
 
 .artist-card:hover {
-  background-color: #252525;
+  background-color: var(--bg-sub);
 }
 
 .card-img {
@@ -286,10 +309,7 @@
 .card-text {
   display: flex;
   flex-direction: column;
-  color: #fff;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  color: var(--text-base-light);
   min-height: 62px;
 }
 
@@ -301,6 +321,9 @@
 
 .artist-name {
   box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   margin-block: 0px;
   font-size: 16px;
   font-weight: 700;
@@ -308,7 +331,7 @@
 }
 
 .artist-categorie {
-  color: #6a6a6a;
+  color: var(--sub-color);
   font-weight: 400;
   font-size: 0.875rem;
 }
@@ -322,7 +345,7 @@
   right: 10px;
   top: 120px;
   padding: 18px;
-  background-color: #1db954;
+  background-color: var(--bg-color);
   border-radius: 100%;
   font-size: 14px;
   opacity: 0;

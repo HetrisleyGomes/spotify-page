@@ -3,15 +3,14 @@
     left: 0;
     top: 0;
     width: 300px;
-    background-color: #000000;
-    padding: 12px;
+    background-color: var(--text-base-dark);
+    padding: 8px;
 }
 
 .sidebar .logo {
-    background-color: #121212;
     display: flex;
     border-radius: 8px;
-    padding: 16px 0 0 16px;
+    padding: 20px 0 0 24px;
 }
 
 .sidebar .logo img {
@@ -19,55 +18,56 @@
 }
 
 .sidebar__navigation {
-    background-color: #121212;
+    background-color: var(--bg-color);
     border-radius: 8px;
     cursor: pointer;
 }
 
 .sidebar nav ul {
     list-style: none;
-    margin-top: 20px;
-    padding: 0px 20px 10px 20px;
+    margin-top: 8px;
+    padding: 0px 20px 10px 22px;
 }
 
 .sidebar nav ul li {
-    padding: 10px 0px;
+    padding: 12px 4px;
 }
 
 .sidebar nav ul li a {
-    color: #b3b3b3;
+    color: var(--text-sub);
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .sidebar nav ul li .fa {
-    font-size: 20px;
+    font-size: 22px;
     margin-right: 10px;
     font-weight: 300;
 }
 
 .sidebar nav ul li a:hover {
-    color: #ffffff;
+    color: var(--text-base-light)
 }
 
 .library {
-    background-color: #121212;
+    background-color: var(--bg-color);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     min-block-size: 40px;
     padding: 4px 8px;
-    color: #b3b3b3;
+    color: var(--text-sub);
     font-weight: 600;
     font-size: 14px;
     margin-top: 10px;
     flex-direction: column;
+    position: relative;
 }
 
 .library .library__button {
     margin-right: 10px;
-    color: #b3b3b3;
+    color: var(--text-sub);
     background-color: transparent;
     border: 0px;
     font-size: 1rem;
@@ -76,10 +76,12 @@
     text-align: center;
     text-decoration: none;
     text-transform: none;
-    padding: 20px 10px;
+    padding: 16px 14px;
     display: flex;
 }
-
+.library .library__button:hover {
+    color: var(--text-base-light)
+}
 .library .library__button .fa {
     font-size: 20px;
     margin-right: 10px;
@@ -93,50 +95,70 @@
 }
 
 .library .library__content .fa-plus {
-   margin: 24px 10px;
+   margin: 16px 12px;
+   font-weight: 400;
 }
 
+/* CARDS */
 .section-playlist {
-    background-color: #242424;
-    align-items: flex-start;
-    border-radius: 8px;
-    gap: 20px;
     display: flex;
-    justify-content: space-between;
-    min-block-size: 40px;
-    color: #b3b3b3;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 8px 0;
-    padding: 16px 20px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 100%;
+    padding: 0;
+    overflow-y: scroll;
+    height: 49vh;
+    user-select: none;
+}
+/* SCROLL */
+.section-playlist::-webkit-scrollbar {
+    width: 10px; 
+}
+.section-playlist::-webkit-scrollbar-thumb {
+    background: #0000;
+    border-radius: 10px;
+}
+.section-playlist:hover::-webkit-scrollbar-thumb {
+    background: var( --sub-color);
+    width: 20px;
 }
 
+/* FIM SCROLL */
 .section-playlist .section-playlist__content {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    border-radius: 8px;
+    background: var(--bg-sub);
+    justify-content: center;
+    margin: 8px 0;
+    padding: 16px 20px;
 }
-
 .section-playlist__content .text {
    padding-bottom: 14px;
-   color: #fff;
+   color: var(--text-base-light);
 }
 
 .section-playlist__content .title {
-   font-weight: 700;
+   font-weight: 800;
 }
 
 .section-playlist__content .subtitle {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.8rem;
- }
+}
 
- .section-playlist__content .section-playlist__button {
-    background-color: #ffffff;
-    color: #000;
-    border-radius: 9999px;
+.section-playlist__content:hover{
+    background: var(--bg-icon);
+}
+.section-playlist__content .section-playlist__button {
+    background-color: var(--text-base-light);
+    color: var(--text-base-dark);
+    border-radius: 100px;
     display: flex;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     text-transform: none;
@@ -146,16 +168,30 @@
     justify-content: center;
     margin-top: 12px;
 }
+/* FIM DOS CARDS */
+
+.coockie-lenguage{
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    padding: 0 24px;
+    border-radius: 8px;
+}
 
 .sidebar .cookies {
-    margin: 25px 20px;
+    margin: 16px 0px;
+    text-align: start;
 }
 
 .sidebar .cookies a {
-    color: #b3b3b3;
+    color: var(--text-sub);
     font-weight: 500;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .sidebar .cookies a:hover {
@@ -164,47 +200,51 @@
 
 .languages .languages__button {
     background-color: transparent;
-    border-radius: 9999px;
-    border: 1px solid #878787;
-    color: #fff;
+    border-radius: 100px;
+    border: 1px solid var(--text-base-light);
+    color: var(--text-base-light);
     cursor: pointer;
     align-items: center;
     padding: 8px;
     width: 170px;
-    margin: 8px;
+    margin-bottom: 16px;
     font-weight: bold;
 }
 
+/* FOOTER */
 .disclaimer-premium {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(to right, #ae2896, #509bf5);
-    padding: 15px 40px;
+    margin: 10px 8px;
+    padding: 11px 24px 7px 15px;
     display: flex;
     justify-content: space-between;
+    min-width: 620px;
+    z-index: 1;
 }
 .disclaimer-premium .text {
    flex-shrink: 0;
 }
 .disclaimer-premium .disclaimer-premium__title {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 12px;
-    margin-bottom: 10px;
+    color: var(--text-base-light);
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 4px 0 8px;
 }
 
 .disclaimer-premium .disclaimer-premium__subtitle {
-    color: #ffffff;
-    font-size: 14px;
+    color: var(--text-base-light);
+    font-size: 1 rem;
     font-weight: 500;
 }
 
 .disclaimer-premium button {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--text-base-light);
+    color: var(--text-base-dark);
     font-size: 16px;
     font-weight: bold;
     padding: 14px 30px;
@@ -213,7 +253,4 @@
     cursor: pointer;
     flex-shrink: 0;
 }
-
-#artistList {
-    display: none;
-}
+/* FIM FOOTER */

@@ -2,12 +2,12 @@
   /* Colors */
   --text-base-dark: #000;
   --text-base-light: #fff;
-  --text-sub: #a7a7a7;
-
-  --spotify-color: #81b71a;
+  --text-sub: #dfdfdf;
 
   --bg-icon: #131313;
-  --bg-top-bar: #61616142;
+  --bg-sub: #242424;
+  --sub-color: #616161;
+  --bg-color: #1db954; /*#61616142;*/
   --grid-gap: 24px;
   --column-count: 5;
 
